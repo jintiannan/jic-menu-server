@@ -23,7 +23,7 @@ public class ResultUtils {
     }
 
     public static Result successWithData(Object data) {
-        return new Result(true, null,null, data);
+        return new Result(true, 200,null, data);
     }
 
     public static Result successWithData(Object data, String msg) {

@@ -14,7 +14,7 @@ public class Result implements Serializable{
     private boolean success = true;
     //返回状态码，为空则默认200.前端需要拦截一些常见的状态码如403、404、500等
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private Integer status;
+    private Integer status = 200;
     //返回数据
     public Object data;
     //返回消息
