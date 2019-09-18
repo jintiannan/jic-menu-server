@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by lvcn on 2019-7-16.
@@ -24,6 +25,14 @@ public class FuncMenuServiceImpl implements FuncMenuService {
         Query query = new Query();
         query.addCriteria(Criteria.where("target").is("jic-leasing"));
         List<FuncMenuVO> menuVOS = mongotemplate.find(query, FuncMenuVO.class,"func-menu");
+        return menuVOS;
+    }
+
+    @Override
+    public List<Map> getAllList() {
+        Query query = new Query();
+//        query.addCriteria(Criteria.where("target").is("jic-leasing"));
+        List<Map> menuVOS = mongotemplate.find(query, Map.class,"sm_menu");
         return menuVOS;
     }
 
